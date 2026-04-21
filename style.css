@@ -327,3 +327,68 @@ img {
     color: #8b949e; /* 淺灰色 */
     margin-top: 10px;
 }
+/* --- 時間軸與活動卡片樣式 --- */
+
+.timeline {
+    border-left: 2px solid var(--border-color);
+    margin-left: 20px;
+    padding-left: 30px;
+    position: relative;
+}
+
+.event-card {
+    position: relative;
+    margin-bottom: 50px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* 時間軸的小圓點 */
+.event-card::before {
+    content: "";
+    position: absolute;
+    left: -41px; /* 剛好卡在左側線上 */
+    top: 25px;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-dark);
+    border: 3px solid var(--accent-green);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.event-card:hover {
+    border-color: var(--accent-green);
+    transform: translateX(10px);
+}
+
+.event-date {
+    font-family: monospace;
+    color: var(--accent-blue);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.event-reflection {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(88, 166, 255, 0.05); /* 微弱藍色背景區分心得 */
+    border-left: 4px solid var(--accent-blue);
+    font-size: 1.1rem; /* 字大一點，方便閱讀心得 */
+    color: var(--text-primary);
+}
+
+/* 標籤樣式 */
+.tag {
+    display: inline-block;
+    background: rgba(57, 255, 20, 0.1);
+    color: var(--accent-green);
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    margin-right: 8px;
+    border: 1px solid var(--accent-green);
+}
