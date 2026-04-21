@@ -83,7 +83,7 @@ nav {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    animation: typing 3s steps(30, end), blink 0.7s infinite;
+    animation: typing 3s steps(30, end), blink 1.5s infinite;
 }
 
 @keyframes typing { from { width: 0 } to { width: 100% } }
@@ -114,14 +114,24 @@ nav {
 .green { background: #27c93f; }
 
 .terminal-body {
-    padding: 20px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.95em;
+    padding: 25px;            /* 稍微增加內距，讓文字不擁擠 */
+    font-size: 1.15rem;       /* 從預設的大小放大到 1.15 倍 */
+    line-height: 1.8;         /* 增加行高，讓多行解釋更易讀 */
+    font-family: 'Fira Code', 'Courier New', monospace; /* 推薦使用更清晰的等寬字體 */
 }
 
-.cmd { color: var(--accent-green); }
-.output { margin: 5px 0 15px 20px; color: #8b949e; }
+/* 針對 cmd (綠色部分) 與 output (內容部分) 進行微調 */
+.terminal-body .cmd {
+    font-weight: bold;        /* 讓指令部分更明顯 */
+    color: var(--accent-green);
+}
 
+.terminal-body .output {
+    display: block;           /* 讓輸出內容自成一塊 */
+    margin: 10px 0 20px 0;    /* 增加上下間距 */
+    color: var(--text-primary);
+    opacity: 0.95;            /* 確保顏色夠白，對比度高 */
+}
 /* === 區塊標題 === */
 .section-title {
     border-bottom: 2px solid var(--border-color);
