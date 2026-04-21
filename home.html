@@ -3,95 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio | Cybersecurity & Dev</title>
+    <title>Portfolio | Security & Dev</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
         <div class="nav-container">
-            <a href="#about">關於我</a>
-            <a href="#skills">核心技能</a>
-            <a href="#projects">專案成果</a>
+            <a href="#about">關於</a>
+            <a href="#skills">技能</a>
+            <a href="#projects">專案專區</a>
         </div>
     </nav>
 
     <div class="container">
         
         <header class="hero">
-            <h1>> <span class="user-name">GUEST@USER</span></h1>
+            <h1>> USER_STUDENT</h1>
             <div class="typewriter">
-                <h2>Security Researcher // C++ Developer</h2>
+                <h2>Cybersecurity | C++ | RSA Research</h2>
             </div>
         </header>
 
         <section id="about" class="terminal-window">
             <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="terminal-title">bash — 80x24</span>
+                <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
             </div>
             <div class="terminal-body">
                 <div><span class="cmd">user@portfolio:~$</span> whoami</div>
-                <div class="output">
-                    你好！我是一名對資訊安全充滿熱情的學生。目前專注於 Web 安全與密碼學研究。
-                </div>
-                <div><span class="cmd">user@portfolio:~$</span> ls -l interests/</div>
-                <div class="output">
-                    - [x] CTF (Web / Crypto / Pwn)<br>
-                    - [x] C++ Algorithmic Problem Solving<br>
-                    - [x] Python Scripting (Automation & Tools)
-                </div>
-                <div><span class="cmd">user@portfolio:~$</span> <span class="cursor">_</span></div>
+                <div class="output">一位熱衷於 CTF 挑戰與演算法研究的開發者。</div>
             </div>
         </section>
 
         <section id="skills">
-            <h2 class="section-title">核心技能</h2>
+            <h2 class="section-title">核心類別</h2>
             <div class="grid">
-                <div class="card">
-                    <div class="card-icon">🛡️</div>
-                    <h3>Cybersecurity</h3>
-                    <p>熟悉 RSA 加密原理、XXE 注入與常見 Web 漏洞分析。積極參與 FhCTF 等賽事。</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">💻</div>
-                    <h3>Programming</h3>
-                    <p>精通 C++ 邏輯開發、Python 密碼學腳本編寫與 gmpy2 等庫的應用。</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">⚙️</div>
-                    <h3>Tools</h3>
-                    <p>Kali Linux, Burp Suite, Git 版本控制, Docker 環境部署。</p>
-                </div>
+                <a href="https://github.com/你的帳號?tab=repositories&q=security" class="card-link" target="_blank">
+                    <div class="card">
+                        <div class="card-icon">🛡️</div>
+                        <h3>資訊安全</h3>
+                        <p>點此查看 XXE、RSA 及密碼學相關筆記與 Write-ups。</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/你的帳號?tab=repositories&q=cpp" class="card-link" target="_blank">
+                    <div class="card">
+                        <div class="card-icon">💻</div>
+                        <h3>程式開發</h3>
+                        <p>點此進入我的 C++ 演算法練習與 Python 自動化工具庫。</p>
+                    </div>
+                </a>
+
+                <a href="https://github.com/你的帳號?tab=repositories" class="card-link" target="_blank">
+                    <div class="card">
+                        <div class="card-icon">📂</div>
+                        <h3>所有專案</h3>
+                        <p>點此瀏覽我所有的 GitHub 儲存庫與開源貢獻。</p>
+                    </div>
+                </a>
             </div>
         </section>
 
         <section id="projects">
             <h2 class="section-title">精選專案</h2>
             <div class="grid">
-                <div class="project-box">
-                    <h3>CTF Write-ups</h3>
-                    <p>詳細記錄各類挑戰賽的解題思路與漏洞復現腳本。</p>
-                    <div class="tags">
-                        <span class="tag">Security</span><span class="tag">Markdown</span>
+                <a href="https://github.com/你的帳號/你的專案名稱" class="card-link" target="_blank">
+                    <div class="project-box">
+                        <h3>RSA 破解工具集</h3>
+                        <p>基於 gmpy2 實作的各種攻擊向量自動化腳本。</p>
+                        <div class="tags"><span class="tag">Python</span><span class="tag">Crypto</span></div>
                     </div>
-                </div>
-                <div class="project-box">
-                    <h3>RSA Decryptor</h3>
-                    <p>基於 Python 的自動化 RSA 分解與解密工具，支援 FactorDB 整合。</p>
-                    <div class="tags">
-                        <span class="tag">Python</span><span class="tag">Crypto</span>
+                </a>
+                
+                <a href="https://github.com/你的帳號/你的專案名稱" class="card-link" target="_blank">
+                    <div class="project-box">
+                        <h3>座標幾何求解器</h3>
+                        <p>使用 C++ 撰寫的數學邏輯工具，解決圓方程式與對稱問題。</p>
+                        <div class="tags"><span class="tag">C++</span><span class="tag">Math</span></div>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <p>&copy; 2026 Designed by YourName. Powered by GitHub Pages.</p>
+        <p>&copy; 2026 Designed by YourName. Hosted on GitHub Pages.</p>
     </footer>
 
 </body>
