@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的個人空間 | Security & Dev</title>
+    <title>Personal Portfolio | Cybersecurity & Dev</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav>
-        <a href="#about">關於</a>
-        <a href="#skills">技能</a>
-        <a href="#projects">專案</a>
+        <div class="nav-container">
+            <a href="#about">關於我</a>
+            <a href="#skills">核心技能</a>
+            <a href="#projects">專案成果</a>
+        </div>
     </nav>
 
     <div class="container">
+        
         <header class="hero">
-            <h1>> [你的暱稱]</h1>
+            <h1>> <span class="user-name">GUEST@USER</span></h1>
             <div class="typewriter">
-                <h2>Security Researcher | C++ Developer</h2>
+                <h2>Security Researcher // C++ Developer</h2>
             </div>
         </header>
 
@@ -27,20 +30,68 @@
                 <span class="dot red"></span>
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
+                <span class="terminal-title">bash — 80x24</span>
             </div>
             <div class="terminal-body">
-                <div><span class="cmd">user@portfolio:~$</span> cat about_me.txt</div>
+                <div><span class="cmd">user@portfolio:~$</span> whoami</div>
                 <div class="output">
-                    你好，我是 [你的暱稱]。<br>
-                    專注於資訊安全與 C++ 開發，喜歡挑戰 CTF。
+                    你好！我是一名對資訊安全充滿熱情的學生。目前專注於 Web 安全與密碼學研究。
+                </div>
+                <div><span class="cmd">user@portfolio:~$</span> ls -l interests/</div>
+                <div class="output">
+                    - [x] CTF (Web / Crypto / Pwn)<br>
+                    - [x] C++ Algorithmic Problem Solving<br>
+                    - [x] Python Scripting (Automation & Tools)
+                </div>
+                <div><span class="cmd">user@portfolio:~$</span> <span class="cursor">_</span></div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">核心技能</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">🛡️</div>
+                    <h3>Cybersecurity</h3>
+                    <p>熟悉 RSA 加密原理、XXE 注入與常見 Web 漏洞分析。積極參與 FhCTF 等賽事。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💻</div>
+                    <h3>Programming</h3>
+                    <p>精通 C++ 邏輯開發、Python 密碼學腳本編寫與 gmpy2 等庫的應用。</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Tools</h3>
+                    <p>Kali Linux, Burp Suite, Git 版本控制, Docker 環境部署。</p>
                 </div>
             </div>
         </section>
 
-        </div>
+        <section id="projects">
+            <h2 class="section-title">精選專案</h2>
+            <div class="grid">
+                <div class="project-box">
+                    <h3>CTF Write-ups</h3>
+                    <p>詳細記錄各類挑戰賽的解題思路與漏洞復現腳本。</p>
+                    <div class="tags">
+                        <span class="tag">Security</span><span class="tag">Markdown</span>
+                    </div>
+                </div>
+                <div class="project-box">
+                    <h3>RSA Decryptor</h3>
+                    <p>基於 Python 的自動化 RSA 分解與解密工具，支援 FactorDB 整合。</p>
+                    <div class="tags">
+                        <span class="tag">Python</span><span class="tag">Crypto</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
 
     <footer>
-        <p>Managed by [你的暱稱] | Hosted on GitHub Pages</p>
+        <p>&copy; 2026 Designed by YourName. Powered by GitHub Pages.</p>
     </footer>
 
 </body>
