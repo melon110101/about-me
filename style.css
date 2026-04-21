@@ -202,3 +202,40 @@ footer {
     font-size: 0.8em;
     border-top: 1px solid var(--border-color);
 }
+/* --- 徹底修復連結藍色問題 --- */
+
+/* 1. 針對所有連結狀態（包含已造訪、未造訪）強制繼承顏色 */
+a, a:link, a:visited, a:active {
+    color: inherit !important;      /* 強制繼承父層文字顏色，不再變藍 */
+    text-decoration: none !important; /* 移除底線 */
+}
+
+/* 2. 針對卡片內的標題與描述文字強制顯色 */
+.card h3, .project-box h3 {
+    color: var(--accent-green) !important; /* 標題固定為螢光綠 */
+}
+
+.card p, .project-box p {
+    color: var(--text-primary) !important; /* 描述文字固定為淺灰色 */
+}
+
+/* 3. 當滑鼠移上去時，讓整個區塊的亮度提升 */
+.silent-link:hover .card, 
+.silent-link:hover .project-box {
+    border-color: var(--accent-green) !important;
+    background-color: rgba(57, 255, 20, 0.05); /* 輕微的綠色半透明背景 */
+}
+
+.silent-link:hover h3 {
+    color: #ffffff !important; /* 懸停時標題變純白，增加對比 */
+    text-shadow: 0 0 10px var(--accent-green);
+}
+
+/* 4. 針對導覽列連結的特別處理 */
+nav a, nav a:visited {
+    color: var(--text-primary) !important;
+}
+
+nav a:hover {
+    color: var(--accent-green) !important;
+}
