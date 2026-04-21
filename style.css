@@ -239,3 +239,49 @@ nav a, nav a:visited {
 nav a:hover {
     color: var(--accent-green) !important;
 }
+/* --- 分類列表專用樣式 --- */
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(48, 54, 61, 0.5);
+    font-family: 'Courier New', monospace;
+    font-size: 0.95em;
+}
+
+.list-item:last-child {
+    border-bottom: none;
+}
+
+/* 模擬 Linux 權限與日期顏色 */
+.list-item .cmd {
+    width: 100px;
+    color: var(--accent-green);
+    font-size: 0.85em;
+}
+
+.list-item .date {
+    width: 120px;
+    color: #8b949e;
+    font-size: 0.85em;
+}
+
+/* 文章連結：再次強化，絕對不變藍 */
+.article-link {
+    color: var(--text-primary) !important;
+    text-decoration: none !important;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.article-link:hover {
+    color: var(--accent-green) !important;
+    padding-left: 10px; /* 懸停時稍微右移增加動感 */
+}
+
+/* 閃爍游標裝飾 */
+.blink {
+    animation: blink 1s infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
