@@ -285,3 +285,35 @@ nav a:hover {
     animation: blink 1s infinite;
 }
 @keyframes blink { 50% { opacity: 0; } }
+/* === 全站圖片樣式 === */
+img {
+    max-width: 100%; /* 防止圖片超出容器範圍 */
+    height: auto;
+    border-radius: 4px; /* 微小的圓角，看起來更現代 */
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color); /* 預設邊框 */
+}
+
+/* === 文章內容圖片區塊 (Figure) === */
+.post-figure {
+    margin: 30px 0;
+    text-align: center; /* 圖片居中 */
+    padding: 10px;
+    background-color: rgba(22, 27, 34, 0.6); /* 稍微深一點的背景色 */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+/* 當滑鼠懸停在圖片區塊上時，閃爍螢光綠邊框 */
+.post-figure:hover {
+    border-color: var(--accent-green) !important;
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.15) !important;
+}
+
+/* === 圖片註解文字 === */
+.post-figcaption {
+    font-family: 'Courier New', monospace; /* 終端機字體 */
+    font-size: 0.85em;
+    color: #8b949e; /* 淺灰色 */
+    margin-top: 10px;
+}
