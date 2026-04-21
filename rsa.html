@@ -32,11 +32,11 @@
                 <figcaption class="post-figcaption">圖 1: RSA 非對稱金鑰對生成的數學邏輯流程</figcaption>
                 </figure>
                 <ol>
-                    <li>隨機選擇兩個大質數 $p$ 和 $q$。</li>
-                    <li>計算 $n = p \times q$。($n$ 為模數)</li>
-                    <li>計算歐拉函數 $\phi(n) = (p-1)(q-1)$。</li>
-                    <li>選擇一個整數 $e$，滿足 $1 < e < \phi(n)$ 且 $\gcd(e, \phi(n)) = 1$（通常取 65537）。</li>
-                    <li>計算 $e$ 關於 $\phi(n)$ 的模反元素 $d$，滿足 $ed \equiv 1 \pmod{\phi(n)}$。</li>
+                    <li>隨機選擇兩個大質數 p 和 q。</li>
+                    <li>計算 n = p * q。(n 為模數)</li>
+                    <li>計算歐拉函數 phi(n) = (p-1)(q-1)。</li>
+                    <li>選擇一個整數 e，滿足 1 < e < phi(n) 且 e 與 phi(n) 互質 = 1（通常取 65537）。</li>
+                    <li>計算 e 關於 phi(n) 的模反元素 d，滿足 d 乘以 e 之後，除以 phi(n) 的餘數必須等於 1。</li>
                 </ol>
                 <div class="highlight-box">
                     <strong>公鑰 (Public Key):</strong> (n, e) <br>
@@ -44,10 +44,10 @@
                 </div>
 
                 <h2 class="section-title">2. 加密與解密</h2>
-                <p>假設明文為 $M$，密文為 $C$：</p>
+                <p>假設明文為 M，密文為 C：</p>
                 <ul>
-                    <li><strong>加密：</strong> $C = M^e \pmod n$</li>
-                    <li><strong>解密：</strong> $M = C^d \pmod n$</li>
+                    <li><strong>加密：</strong> C = M^e mod n</li>
+                    <li><strong>解密：</strong> M = C^d mod n</li>
                 </ul>
 
                 <h2 class="section-title">3. CTF 常見攻擊手段</h2>
