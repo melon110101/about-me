@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA 加密原理詳解 | Security Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="home.html">← 返回首頁</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <article class="post">
+            <header class="post-header">
+                <h1 class="accent-text">> RSA 非對稱加密原理與實踐</h1>
+                <p class="post-meta">發布日期: 2026-03 | 類別: 密碼學 | 作者:陳宥誠 / CTF</p>
+            </header>
+
+            <section class="post-content">
+                <p>RSA 是目前應用最廣泛的非對稱加密演算法，其安全性基於「大整數質因數分解」的困難性。</p>
+
+                <h2 class="section-title">1. 金鑰生成步驟</h2>
+                <figure class="post-figure">
+                <img src="image/rsa image.png" alt="RSA Key Generation Flow" class="post-image">
+                <figcaption class="post-figcaption">圖 1: RSA 非對稱金鑰對生成的數學邏輯流程</figcaption>
+                </figure>
+                <ol>
+                    <li>隨機選擇兩個大質數 p 和 q。</li>
+                    <li>計算 n = p * q。(n 為模數)</li>
+                    <li>計算歐拉函數 phi(n) = (p-1)(q-1)。</li>
+                    <li>選擇一個整數 e，滿足 1 < e < phi(n) 且 e 與 phi(n) 互質 = 1（通常取 65537）。</li>
+                    <li>計算 e 關於 phi(n) 的模反元素 d，滿足 d 乘以 e 之後，除以 phi(n) 的餘數必須等於 1。</li>
+                </ol>
+                <div class="highlight-box">
+                    <strong>公鑰 (Public Key):</strong> (n, e) <br>
+                    <strong>私鑰 (Private Key):</strong> (n, d)
+                </div>
+
+                <h2 class="section-title">2. 加密與解密</h2>
+                <p>假設明文為 M，密文為 C：</p>
+                <ul>
+                    <li><strong>加密：</strong> C = M^e mod n</li>
+                    <li><strong>解密：</strong> M = C^d mod n</li>
+                </ul>
+
+                <h2 class="section-title">3. CTF 常見攻擊手段</h2>
+                <div class="terminal-window">
+                    <div class="terminal-body">
+                        <span class="cmd"># 如果 n 太小，可以使用 FactorDB 進行分解</span><br>
+                        <span class="output">RSA 的安全性建立在一個數學難題上：「已知 n 是由兩個質數相乘，但要把 n 分解回原來的 p 和 q 極其困難。」，而 Factordb (Factordb.com) 是一個專門用來儲存和查詢大整數因數分解結果的公開數據庫網站。
+                            它在密碼學領域，特別是 CTF  RSA 密碼學挑戰中非常著名。</span><br>
+                        <figure class="post-figure">
+                        <img src="image/Screenshot 2026-03-24 103904.png" alt="RSA " class="post-image">
+                        <figcaption class="post-figcaption">圖 2: 實際運行腳本</figcaption>
+                        </figure>
+                        <span class="cmd"># 如果 e 太小 (e=3)，可以使用低指數攻擊</span><br>
+                        <span class="output">在 RSA 演算法中，為了追求加密效率，有時會選擇較小的公鑰指數 e
+                            ，但如果使用不當，這會導致嚴重的安全漏洞</span>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 RSA Study Notes. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
