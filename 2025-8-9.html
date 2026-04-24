@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RSA 加密原理詳解 | Security Notes</title>
+    <title>嘉南聯合體驗營 | Event Notes</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -26,22 +26,6 @@
             <section class="post-content">
                 <p>RSA 是目前應用最廣泛的非對稱加密演算法，其安全性基於「大整數質因數分解」的困難性。</p>
 
-                <h2 class="section-title">1. 金鑰生成步驟</h2>
-                <figure class="post-figure">
-                <img src="image/rsa image.png" alt="RSA Key Generation Flow" class="post-image">
-                <figcaption class="post-figcaption">圖 1: RSA 非對稱金鑰對生成的數學邏輯流程</figcaption>
-                </figure>
-                <ol>
-                    <li>隨機選擇兩個大質數 p 和 q。</li>
-                    <li>計算 n = p * q。(n 為模數)</li>
-                    <li>計算歐拉函數 phi(n) = (p-1)(q-1)。</li>
-                    <li>選擇一個整數 e，滿足 1 < e < phi(n) 且 e 與 phi(n) 互質 = 1（通常取 65537）。</li>
-                    <li>計算 e 關於 phi(n) 的模反元素 d，滿足 d 乘以 e 之後，除以 phi(n) 的餘數必須等於 1。</li>
-                </ol>
-                <div class="highlight-box">
-                    <strong>公鑰 (Public Key):</strong> (n, e) <br>
-                    <strong>私鑰 (Private Key):</strong> (n, d)
-                </div>
 
                 <h2 class="section-title">2. 加密與解密</h2>
                 <p>假設明文為 M，密文為 C：</p>
